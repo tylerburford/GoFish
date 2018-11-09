@@ -1,6 +1,3 @@
-//
-// Created by Tyler on 11/7/2018.
-//
 #include "card.h"
 
 Card::Card() {
@@ -19,7 +16,7 @@ string Card::toString() const {
 }
 
 bool Card::sameSuitAs(const Card &c) const {
-    if(this->mySuit == c) //fix this
+    if(this->mySuit == c.mySuit)
         return true;
     else
         return false;
@@ -43,7 +40,7 @@ string Card::suitString(Card::Suit s) const {
 }
 
 string Card::rankString(int r) const {
-    string strRet;
+     string strRet;
     if(r == 1)
         strRet = "A";
     else if(r == 11)
@@ -57,10 +54,14 @@ string Card::rankString(int r) const {
     return strRet;
 }
 
-bool Card::operator == (const Card& rhs) const{
-
+bool Card::operator == (const Card& rhs) const{ //true if equal, false if not equal
+    if((this->myRank == rhs.myRank) && (this->mySuit == rhs.mySuit))
+        return true;
+    else return false;
 }
 
-bool Card::operator != (const Card& rhs) const{
-
+bool Card::operator != (const Card& rhs) const{ //true if not equal, false if equal
+    if((this->myRank != rhs.myRank) || (this->mySuit != rhs.mySuit))
+        return true;
+    else return false;
 }

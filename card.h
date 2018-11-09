@@ -1,8 +1,10 @@
 #ifndef GOFISH2_CARD_H
 #define GOFISH2_CARD_H
-
+#include <ctime>
 #include <iostream>
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
 class Card
