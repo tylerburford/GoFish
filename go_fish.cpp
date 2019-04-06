@@ -4,8 +4,6 @@
 #include "deck.h"
 using namespace std;
 
-
-
 int main() {
     srand(unsigned (time(0))); //seed random generator
     int numCards = 7; //2 players

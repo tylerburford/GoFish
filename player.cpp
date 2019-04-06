@@ -1,11 +1,9 @@
 #include "player.h"
-#include "gofish_results.txt"
 
 
 void Player::addCard(Card c) {
     myHand.push_back(c);
-    myfile.open("gofish_results.txt");
-    myfile << this->getName() <<" draws " << c.toString() <<"\n";
+    cout << this->getName() <<" draws " << c.toString() <<"\n";
 }
 
 void Player::bookCards(Card c1, Card c2) {

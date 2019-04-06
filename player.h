@@ -7,7 +7,6 @@
 #include "card.h"
 using namespace std;
 
-ofstream myfile;
 class Player
 {
 public:

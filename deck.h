@@ -1,6 +1,5 @@
 #ifndef GOFISH2_DECK_H
 #define GOFISH2_DECK_H
-
 #include "card.h"
 
 class Deck
