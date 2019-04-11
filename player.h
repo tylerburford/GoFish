@@ -26,13 +26,13 @@ public:
     int getTurnId() const {
         return turnID;
     }
-    void addCard(Card c);  //adds a card to the hand
-    void bookCards(Card c1, Card c2);
+    string addCard(Card c);  //adds a card to the hand
+    string bookCards(Card c1, Card c2);
 
-    void askForCard(Card c);
-    void answerYes(Card c);
-    void goFish();
-    void Victory();
+    string askForCard(Card c);
+    string answerYes(Card c);
+    string goFish();
+    string Victory();
 
     //OPTIONAL
     // comment out if you decide to not use it

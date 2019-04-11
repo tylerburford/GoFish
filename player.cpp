@@ -1,31 +1,43 @@
 #include "player.h"
 
 
-void Player::addCard(Card c) {
+string Player::addCard(Card c) {
     myHand.push_back(c);
     cout << this->getName() <<" draws " << c.toString() <<"\n";
+    string announce = this->getName() + " draws " +  c.toString() + "\n";
+    return announce;
 }
 
-void Player::bookCards(Card c1, Card c2) {
+string Player::bookCards(Card c1, Card c2) {
     myBook.push_back(c1);
     myBook.push_back(c2);
     cout << this->getName()<<" books a pair of " << c1.rankString(c1.getRank()) <<"'s. \n";
+    string announce = this->getName() + " books a pair of " + c1.rankString(c1.getRank()) + "'s. \n";
+    return announce;
 }
 
-void Player::askForCard(Card c){
+string Player::askForCard(Card c){
     cout << this->getName()<<" asks: Do you have a "<< c.rankString(c.getRank())<<"? \n";
+    string announce = this->getName() + " asks: Do you have a " +  c.rankString(c.getRank()) + "? \n";
+    return announce;
 }
 
-void Player::answerYes(Card c){
+string Player::answerYes(Card c){
     cout<< this->getName()<<" says: Yes, I have a "<< c.rankString(c.getRank())<<". \n";
+    string announce = this->getName() + " says: Yes, I have a " + c.rankString(c.getRank()) + ". \n";
+    return announce;
 }
 
-void Player::goFish(){
-    cout<< this->getName()<<" says: Go Fish! \n";
+string Player::goFish(){
+    cout<< this->getName()<<" says: Go Fish! \n \n";
+    string announce = this->getName() + " says: Go Fish! \n \n";
+    return announce;
 }
 
-void Player::Victory(){
+string Player::Victory(){
     cout<< this->getName()<< " wins! The winning pairs were: \n"<< this->showBooks();
+    string announce =  this->getName() + " wins! The winning pairs were: \n" + this->showBooks();
+    return announce;
 }
 
 
@@ -81,7 +93,7 @@ string Player::showHand() const {
         hand.push_back(cardString);
     }
     int j = 0;
-    string strRet = "";
+    string strRet = this->getName() + "'s hand has";
     while(j < handSize){ //concatenate the vector into one string
         strRet += (" " + hand[j]);
         j++;
@@ -122,3 +134,10 @@ bool Player::sameRankInHand(Card c) const {
     return false;
 }
 
+bool Player::cardInHand(Card c) const {
+    for(int i=0; i< myHand.size(); i++) {
+        if(myHand[i] == c)
+            return true;
+    }
+    return false;
+}
